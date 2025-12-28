@@ -244,6 +244,12 @@ body.project-page {
     color: #555;
     line-height: 1.6;
   }
+
+  .about-hero{
+    text-decoration: none;
+    color: #5c5c5c;
+    font-weight: normal;
+  }
   
   /* Mobile fallback */
   @media (max-width: 768px) {
@@ -252,11 +258,6 @@ body.project-page {
     }
   }
 
-  .about-hero{
-    text-decoration: none;
-    color: #5c5c5c;
-    font-weight: normal;
-  }
 
 
   
