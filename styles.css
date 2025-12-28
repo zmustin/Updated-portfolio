@@ -1,0 +1,259 @@
+/* Global */
+body {
+    margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+  color: #222;
+
+  background-image:
+    url("./images/website_background copy.JPG"),
+    url("./images/background_repeat.png");
+
+  background-repeat:
+    no-repeat,
+    repeat;
+
+  background-position:
+    top center,
+    top center;
+
+  background-size:
+    100% auto,   /* hero image */
+    100% 100vh;   
+
+  background-attachment:
+    scroll,
+    scroll;
+
+    
+      
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: sticky;
+    top: 0;
+    background: #c2c2c2;
+    padding: 1rem 2rem;
+    box-shadow: rgba(0,0,0,0.1) 0px 2px 4px;
+    z-index: 100;
+    opacity: 0.9;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end; /* push items to the right */
+    margin: 0; /* remove default margin */
+    padding: 0; /* remove default padding */
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #5c5c5c;
+    font-weight: normal;
+  }
+  
+  
+  /* Sections common style */
+  section {
+    position: relative;
+    padding: 2rem 2rem;
+    overflow: hidden;
+    background: transparent; /* background controlled by fade layers */
+  }
+  
+  /* Fade layer for hero/about/contact */
+  .fade-layer,
+  .work-fade-layer {
+    position: absolute;
+    inset: 0;
+    background-color: #fff; /* tint or white overlay */
+    opacity: 0; /* start hidden */
+    transition: opacity 0.8s ease-out;
+    z-index: 1; /* behind content */
+  }
+  
+  /* Section content */
+  .hero-content,
+  .about-content,
+  .contact-content,
+  .work-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Work / Projects */
+  .work-section {
+    color: #5c5c5c;
+    background: transparent; /* allows fade-layer to show */
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 1rem;
+    margin-top: 2rem;
+    opacity: 0.89; /* fully visible */
+    position: relative;
+    z-index: 3; /* above fade-layer */
+  }
+  .project-card {
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: #d8d8d8;
+    width: 650px;
+    height: 700px;
+    overflow: hidden; /* prevents overflow */
+  }
+  
+  /* Image fits within card */
+  .project-card img.project-image {
+    width: 80%;
+    height: 90%;
+    
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .project-card img.cml {
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 55%;
+  }
+  
+  
+  
+  /* Hero */
+  .hero-section {
+    height: 50vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .hero-content h1 {
+    color: #5c5c5c;
+    font-size: 4.5rem;
+    font-weight: 100;
+    margin: 0;
+  }
+  .hero-content h2 {
+    color: #5c5c5c;
+    font-size: 1.1rem;
+    font-weight: 10;
+    margin: 0.5;
+  }
+  
+  /* Scroll reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 1.2s ease-out, transform 0.7s ease-out;
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Fade layers trigger when section active */
+  .hero-section.active .fade-layer,
+  .about-section.active .fade-layer,
+  .contact-section.active .fade-layer,
+  .work-section.active .work-fade-layer {
+    opacity: 0; /* fade layer opacity */
+  }
+
+  .project-link {
+    text-decoration: none;
+    color: inherit;       /* keeps text styling */
+    display: inline-block;
+  }
+  
+  /* Optional: hover effect */
+  .project-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  .project-link:hover .project-card {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    cursor: pointer;
+  }
+
+  /* Project Detail Page */
+
+body.project-page {
+    background-image: url("./images/9bcf11f6-55a9-4be4-9728-77f8bd463f1e.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.project-hero {
+    padding: 1rem 2rem 0rem;
+    text-align: center;
+  }
+  
+  .project-hero h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    color: #5c5c5c;
+    margin-bottom: 0.1rem;
+  }
+  
+  .project-subtitle {
+    color: #888;
+    font-size: 1.1rem;
+  }
+  
+  /* Two-column project layout */
+
+.project-content.two-column {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr; /* image slightly wider */
+    gap: 3rem;
+    align-items: start;
+  }
+  
+  /* Image */
+  .project-image-wrapper img {
+    width: 100%;
+    border-radius: 0px;
+    display: block;
+  }
+  
+  /* Text */
+  .project-text h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+    color: #444;
+  }
+  
+  .project-text p,
+  .project-text li {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Mobile fallback */
+  @media (max-width: 768px) {
+    .project-content.two-column {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  
+  
+  
+
+  
