@@ -151,12 +151,13 @@ body {
   
   /* Scroll reveal animation */
   .reveal {
-    opacity: 0;
+    opacity: 0 !important; /* Force it to be hidden on load */
     transform: translateY(24px);
     transition: opacity 1.2s ease-out, transform 0.7s ease-out;
   }
+  
   .reveal.active {
-    opacity: 1;
+    opacity: 1 !important;
     transform: translateY(0);
   }
   
@@ -249,6 +250,12 @@ body.project-page {
     .project-content.two-column {
       grid-template-columns: 1fr;
     }
+  }
+
+  .about-hero{
+    text-decoration: none;
+    color: #5c5c5c;
+    font-weight: normal;
   }
 
 
