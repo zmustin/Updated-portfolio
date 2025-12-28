@@ -37,5 +37,3 @@ links.forEach(link => {
     });
   });
 });
-
-
